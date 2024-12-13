@@ -54,7 +54,7 @@ def remove_instrument_response(input_data_path, xml_path, output_units):
     full_inventory = read_inventory(xml_path)
 
     # Ensure output directory exists
-    output_folder = "./"
+    output_folder = "./Output/"
     #os.makedirs(output_folder, exist_ok=True)
 
     # Process each trace in the stream
@@ -102,7 +102,7 @@ def remove_instrument_response(input_data_path, xml_path, output_units):
                 tr.stats.mseed.encoding = encoding
                 print(f"Encoding set for trace {tr.id}: {encoding}")
 
-                tr.write(os.path.join('./', f"{station}.{channel}_rmIns_{output_units}.mseed"),
+                tr.write(os.path.join('./Output/', f"{station}.{channel}_rmIns_{output_units}.mseed"),
                          format=input_format)
             else:
                 tr.write(os.path.join(output_folder, f"{station}.{channel}_rmIns_{output_units}.sac"),
