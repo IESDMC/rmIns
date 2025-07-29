@@ -114,7 +114,7 @@ def main():
         print("Error: Provide between 1 and 6 mseed files.")
         sys.exit(1)
 
-    plot_mseeds(args.DataFile, sync_time=args.sync)
+    plot_mseeds(args.DataFile, sync_time=args.synch)
 
 
 if __name__ == "__main__":
